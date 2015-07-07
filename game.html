@@ -1,17 +1,23 @@
 <script>
 
-var answer = 26;
-var guess = prompt("Can you guess how old I am?");
+  var answer = 26;
+  var guess = prompt("Can you guess how old I am?");
+  var wrong;
 
-if (guess == answer){
-	alert("You are right!");
-}
-else if (guess > answer){
-	alert("I'm not that old! Refresh and try again");
-}
-else if (guess < answer){
-	alert("I'm not that young! Refresh and try again");
-}
-else{}
+    if (guess == answer) {
+    	alert("You are right!");
+    }
+    else if (guess > answer) {
+    	alert("I'm not that old! Press ok and try again!");
+      wrong = true;
+    }
+    else if (guess < answer) {
+    	alert("I'm not that young! Press ok and try again!");
+      wrong = true;
+    }
+
+  if(wrong) {
+    location.reload();
+  }
 
 </script>
