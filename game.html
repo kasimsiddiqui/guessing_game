@@ -1,23 +1,31 @@
 <script>
 
-  var answer = 26;
-  var guess = prompt("Can you guess how old I am?");
-  var wrong;
-
+function Game (answer, guess, wrong) {
+  this.answer = answer;
+  this.guess = guess;
+  this.wrong = wrong;
+  this.attempt = function () {
+    guess = prompt("Can you guess how old I am?");
     if (guess == answer) {
-    	alert("You are right!");
+      alert("You are right!");
+      wrong=false;
     }
     else if (guess > answer) {
-    	alert("I'm not that old! Press ok and try again!");
+      alert("I'm not that old! Press ok and try again!");
       wrong = true;
     }
     else if (guess < answer) {
-    	alert("I'm not that young! Press ok and try again!");
+      alert("I'm not that young! Press ok and try again!");
       wrong = true;
     }
+    if(wrong) {
+    this.attempt();
+    }
+  };
+}
 
-  if(wrong) {
-    location.reload();
-  }
+var kasim = new Game (26, null, true);
+
+kasim.attempt();
 
 </script>
