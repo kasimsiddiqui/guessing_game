@@ -3,3 +3,5 @@ I have created a game that prompts the user to guess my age and stores it as a v
 We added a variable called "wrong" and included an if statement that would refresh the page once the user guessed correctly.
 
 Converted game to work within an object with a constructor and method and all of that stuff.
+
+Now we have html, instructions, high scores, reviews and a picture.
