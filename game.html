@@ -1,31 +1,57 @@
-<script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Awesome Game</title>
+</head>
+<body>
+  <h1>
+    Guess my age game!
+  </h1>
+  <hr/>
+  <h2>Instructions</h2>
+  <p>This is a really fun game that allows a player to try to guess my age!</p>
+  <p>If you guess too high or low it points you in the <em>right</em> direction.</p>
+  <img src='kasim.jpg' height = 304  width = 456px>
+  <h2>High Scores</h2>
+  <ol>
+    <li>me</li>
+    <li>you</li>
+    <li>someone</li>
+    <li>someone else</li>
+  </ol>
+  <h2>Reviews</h2>
+  <ul>
+    <li>This game sucks</li>
+    <li>I can't seem to win this game</li>
+  </ul>
+  <script>
+  function Game (answer, guess, wrong) {
+    this.answer = answer;
+    this.guess = guess;
+    this.wrong = wrong;
+    this.attempt = function () {
+      guess = prompt("Can you guess how old I am?");
+      if (guess == answer) {
+        alert("You are right!");
+        wrong=false;
+      }
+      else if (guess > answer) {
+        alert("I'm not that old! Press ok and try again!");
+        wrong = true;
+      }
+      else if (guess < answer) {
+        alert("I'm not that young! Press ok and try again!");
+        wrong = true;
+      }
+      if(wrong) {
+      this.attempt();
+      }
+    };
+  }
+  var kasim = new Game (26, null, true);
+  kasim.attempt();
+  </script>
+</body>
+</html>
 
-function Game (answer, guess, wrong) {
-  this.answer = answer;
-  this.guess = guess;
-  this.wrong = wrong;
-  this.attempt = function () {
-    guess = prompt("Can you guess how old I am?");
-    if (guess == answer) {
-      alert("You are right!");
-      wrong=false;
-    }
-    else if (guess > answer) {
-      alert("I'm not that old! Press ok and try again!");
-      wrong = true;
-    }
-    else if (guess < answer) {
-      alert("I'm not that young! Press ok and try again!");
-      wrong = true;
-    }
-    if(wrong) {
-    this.attempt();
-    }
-  };
-}
 
-var kasim = new Game (26, null, true);
-
-kasim.attempt();
-
-</script>
