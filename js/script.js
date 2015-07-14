@@ -12,7 +12,9 @@ function Game (answer, guess, wrong) {
     this.attempt = function() {
       if (guess == answer) {
         var el = document.getElementById("game");
-        el.innerHTML = "You are right!";
+        var goodJob = document.createElement('p');
+        goodJob.textContent = "You are right!";
+        el.appendChild(goodJob);
         wrong=false;
       }
 
